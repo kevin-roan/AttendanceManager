@@ -1,0 +1,76 @@
+{% extends 'tmp/teacher.html' %}
+{% block base %}
+<h1 align="center">Mark Attendence</h1>
+
+<form method="post">
+{% csrf_token %}
+<table align="center" class="table table-striped">
+
+   <tr>
+			<td>Course</td>
+            <td><select name="c" class="form-control" required="" id="course">
+			<option value="">Select...</option>
+                {% for x in ob %}
+
+                <option value="{{ x.c_id }}">{{ x.course }}</option>
+                {% endfor %}
+            </select>
+
+
+        <td>Sem</td>
+        <td> <select name="s" class="form-control" id="class">
+			<option value="">Select...</option>
+  			<option value="s1">1</option>
+  			<option value="s2">2</option>
+            <option value="s3">3</option>
+  			<option value="s4">4</option>
+            <option value="s5">5</option>
+  			<option value="s6">6</option>
+            </select></td>
+
+
+  		<td> <input type="submit" class="btn btn-blue" value="Submit"></td>
+
+    </tr>
+
+</table>
+</form>
+
+
+{% if objval %}
+
+	<table border="2" align="center" class="table table-responsive text-center" style="font-weight: bolder">
+	<tr style="font-weight: bolder">
+		<td>Student Name</td>
+
+        <td>Phone</td>
+
+	</tr>
+         {% for x in objval %}
+	<tr style="font-weight: bolder">
+		<td>{{ x.name }}</td>
+		<td>{{ x.phn }}</td>
+        <td style="font-weight: bold;color: red">
+               <a href="{% url 'ab' idd=x.s_id %}">
+                  <input type="radio" style="pointer-events:none;">Absent
+                </a>
+        </td>
+         <td style="font-weight: bold;color: black">
+               <a href="{% url 'pr' idd=x.s_id %}">
+                  <input type="radio" style="pointer-events:none;">Present
+                </a>
+        </td>
+{#		<td>{{ x.attendence }}</td>#}
+{#    <td>H1 : {{ x.h1 }} - H2 : {{ x.h2 }} - H3 : {{ x.h3 }} - H4 : {{ x.h4 }} - H5 : {{ x.h5 }}</td>#}
+
+	</tr>
+        {% endfor %}
+</table>
+{% endif %}
+
+{% if le %}
+    <h3 align="center">{{ le }}</h3>
+
+{% endif %}
+
+{% endblock %}

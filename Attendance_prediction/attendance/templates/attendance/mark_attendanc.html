@@ -1,0 +1,71 @@
+{% extends 'tmp/teacher.html' %}
+{% block base %}
+<h1 align="center">Mark Attendence</h1>
+<br>
+    {% if cas == '1st period' %}
+
+        <div align="center">
+
+
+                <label style="color:red;">{{ cas }}</label>
+
+        </div>
+        {% elif cas < '5' %}
+
+        <div align="center">
+
+
+                <label style="color:red;">{{ cas }}st hour taken, Now marking {{ cas1 }}nd hour..</label>
+
+        </div>
+{% else %}
+        <div align="center">
+
+
+                <label style="color:red;">Today's 5 Hours of attendance Marked..</label>
+
+        </div>
+
+    {% endif %}
+    <br>
+
+{% if objval %}
+
+	<table border="2" align="center" class="table uneditable-input text-center" style="font-weight: bolder">
+	<tr style="font-weight: bolder">
+		<td>Student Name</td>
+
+        <td>Phone</td>
+        <td></td>
+        <td></td>
+{#         <td>Status</td>#}
+
+	</tr>
+         {% for x in objval %}
+	<tr style="font-weight: bolder">
+		<td>{{ x.name }}</td>
+		<td>{{ x.phn }}</td>
+        <td style="font-weight: bold;color: red">
+               <a href="{% url 'ab' idd=x.s_id %}">
+                  <input type="radio" style="pointer-events:none;">Absent
+                </a>
+        </td>
+         <td style="font-weight: bold;color: black">
+               <a href="{% url 'pr' idd=x.s_id %}">
+                  <input type="radio" style="pointer-events:none;">Present
+                </a>
+        </td>
+{#		<td>{{  }}</td>#}
+{#    <td>H1 : {{ x.h1 }} - H2 : {{ x.h2 }} - H3 : {{ x.h3 }} - H4 : {{ x.h4 }} - H5 : {{ x.h5 }}</td>#}
+
+	</tr>
+        {% endfor %}
+</table>
+{% endif %}
+
+{% if le %}
+    <h3 align="center">{{ le }}</h3>
+
+{% endif %}
+
+{% endblock %}
