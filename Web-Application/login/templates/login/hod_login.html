@@ -1,0 +1,39 @@
+{% extends 'tmp/login.html' %}
+{% block base %}
+
+	<h1 align="center">Login</h1>
+<form method="post">
+{% csrf_token %}
+	<table align="center">
+		<tr>
+			<td>User Name</td>
+			<td><input type="text" required="" class="form-control" name="username"></td>
+		</tr>
+		
+
+		<tr>
+			<td>Password</td>
+			<td><input type="Password" class="form-control" required="" name="password"></td>
+		</tr>
+		<tr>
+{#			<td></td>#}
+
+{#			<td> <a href="/login/forgot/">Forgot Password</a> </td>#}
+		</tr>
+
+<tr>
+			<td></td>
+			<td><input type="submit" class="btn btn-blue" value="Login" name=""></td>
+		</tr>
+<tr>
+			<td></td>
+			
+{#			<td><a href="/hod/hod/">Sign Up</a>  </td>#}
+		</tr>
+
+	</table>
+	
+</form>
+
+
+{% endblock %}
