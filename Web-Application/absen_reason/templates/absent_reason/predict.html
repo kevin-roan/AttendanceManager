@@ -1,0 +1,151 @@
+{% extends 'tmp/hod.html' %}
+
+
+{% block base %}
+
+<h1 align="center">ANALYZE REASON</h1>
+    <form method="post">
+    {% csrf_token %}
+    <table align="center" style="font-weight: bolder">
+        <tr>
+
+			<td>Name</td>
+			<td height="50"><input type="text" value="{{ ob.s.name }}" readonly class="form-control"  required="" name=""></td>
+		</tr>
+
+
+		<tr>
+			<td>Absent Date</td>
+			<td height="50"><input type="text" value="{{ ob.a.date }}" readonly class="form-control"  required="" name=""></td>
+		</tr>
+
+		<tr>
+			<td>Attendance Status</td>
+			 <td style="color:red;font-weight: bold">
+
+
+        H1 : {{ ob.a.h1 }}
+
+		</tr>
+        <tr>
+			<td></td>
+			 <td style="color:red;font-weight: bold">
+
+
+     H2 : {{ ob.a.h2 }}
+
+		</tr>
+        <tr>
+			<td></td>
+			 <td style="color:red;font-weight: bold">
+
+
+        H3 : {{ ob.a.h3 }}
+
+		</tr>
+        <tr>
+			<td></td>
+			 <td style="color:red;font-weight: bold">
+
+
+     H4 : {{ ob.a.h4 }}
+
+		</tr>
+        <tr>
+			<td></td>
+			 <td style="color:red;font-weight: bold">
+
+
+       H5 : {{ ob.a.h5 }}
+
+		</tr>
+
+		<tr>
+			<td>Reason</td>
+			<td height="50"><textarea readonly class="form-control"   required="">{{ ob.reason }}</textarea></td>
+		</tr>
+
+        <tr>
+			<td>Reason Submitted Date</td>
+			<td height="50"><input type="text" readonly class="form-control" value="{{ ob.date }}" required="" name=""></td>
+		</tr>
+
+        <tr>
+			<td>Total Absents in same day</td>
+			<td height="50"><input type="text" readonly class="form-control" value="{{ ab }}" required="" name=""></td>
+		</tr>
+
+         <tr>
+			<td>Anyone absent in Same Pattern Hour</td>
+			<td height="50"><input type="text" readonly class="form-control" value="{{ sm }}" required="" name=""></td>
+		</tr>
+          <tr>
+			<td>No of absent in same hour</td>
+			<td height="50"><input type="text" readonly class="form-control" value="{{ co }}" required="" name=""></td>
+		</tr>
+
+
+    </table>
+
+    <br>
+    <h5 align="center" style="color: red"> {{ res }} </h5>
+
+<br>
+        <h4 align="center">Other Attendance Record </h4>
+    <table align="center" border="2" width="500">
+        <thead align="center">
+         <th>H1</th>
+        <th>H1</th>
+        <th>H2</th>
+        <th>H3</th>
+        <th>H4</th>
+        <th>H5</th>
+        </thead>
+        <tbody>
+
+            {% for x in att %}
+            <tr style="font-weight: bolder">
+                <td>{{ x.a_id }}</td>
+                {% if x.h1 == "A" %}
+                <td style="color: red">Absent</td>
+                {% else %}
+                <td>Present</td>
+                {% endif %}
+
+            {% if x.h2 == "A" %}
+                <td style="color: red">Absent</td>
+                {% else %}
+                <td>Present</td>
+                {% endif %}
+
+            {% if x.h3 == "A" %}
+                <td style="color: red">Absent</td>
+                {% else %}
+                <td>Present</td>
+                {% endif %}
+
+            {% if x.h4 == "A" %}
+                <td style="color: red">Absent</td>
+                {% else %}
+                <td>Present</td>
+                {% endif %}
+
+            {% if x.h5 == "A" %}
+                <td style="color: red">Absent</td>
+                {% else %}
+                <td>Present</td>
+                {% endif %}
+
+            </tr>
+        {% endfor %}
+
+        </tbody>
+
+
+
+
+    </table>
+    </form>
+
+
+{% endblock %}
