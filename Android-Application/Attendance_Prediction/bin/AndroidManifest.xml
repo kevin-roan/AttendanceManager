@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.attendance_prediction"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="17" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.example.attendance_prediction.Login"
+            android:label="@string/app_name" >
+            
+             <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+           
+        </activity>
+        <activity
+            android:name="com.example.attendance_prediction.View_attendance"
+            android:label="@string/title_activity_view_attendance" >
+        </activity>
+        <activity
+            android:name="com.example.attendance_prediction.Submit_reason"
+            android:label="@string/title_activity_submit_reason" >
+        </activity>
+        <activity
+            android:name="com.example.attendance_prediction.View_deptinfo"
+            android:label="@string/title_activity_view_deptinfo" >
+        </activity>
+        <activity
+            android:name="com.example.attendance_prediction.Download_studymaterials"
+            android:label="@string/title_activity_download_studymaterials" >
+        </activity>
+        <activity
+            android:name="com.example.attendance_prediction.Homepage"
+            android:label="@string/title_activity_homepage" >
+            
+        </activity>
+    </application>
+
+</manifest>

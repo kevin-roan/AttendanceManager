@@ -1,0 +1,61 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/wl"
+    android:gravity="center"
+    android:orientation="vertical" >
+
+    <TableRow
+        android:id="@+id/tableRow1"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:gravity="center" >
+
+        <Button
+            android:id="@+id/button1"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:text="Study Material" />
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/tableRow2"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:gravity="center" >
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:text="Attendance" />
+
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/tableRow3"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:gravity="center" >
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:text="Department Info" />
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/tableRow4"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:gravity="center" >
+
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:text="Logout" />
+    </TableRow>
+
+</LinearLayout>

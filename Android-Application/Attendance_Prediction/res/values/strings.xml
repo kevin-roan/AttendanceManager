@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Attendance_Prediction</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_view_attendance">View_attendance</string>
+    <string name="title_activity_submit_reason">Submit_reason</string>
+    <string name="title_activity_view_deptinfo">View_deptinfo</string>
+    <string name="title_activity_download_studymaterials">Download_studymaterials</string>
+    <string name="title_activity_homepage">Homepage</string>
+
+</resources>
