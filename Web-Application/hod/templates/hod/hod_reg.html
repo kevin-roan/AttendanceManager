@@ -1,0 +1,44 @@
+{% extends 'tmp/login.html' %}
+{% block base %}
+
+	<h1 align="center">HOD Registration</h1>
+<form method="post">
+    {% csrf_token %}
+	<table align="center">
+		<tr>
+			<td>Name</td>
+			<td><input type="text" class="form-control" required="" name="hnm"></td>
+		</tr>
+		
+
+		<tr>
+			<td>Address</td>
+			<td><input type="textarea" class="form-control" required="" name="hadr"></td>
+		</tr>
+
+
+		<tr>
+			<td>Phone Number</td>
+			<td><input type="text" class="form-control" required="" name="hpn"></td>
+		</tr>
+
+		<tr>
+			<td>Email</td>
+			<td><input type="Email" class="form-control" required="" name="hem"></td>
+		</tr>
+
+		<tr>
+			<td>Password</td>
+			<td><input type="Password" class="form-control" required="" name="hpass"></td>
+		</tr>
+
+<tr>
+			<td></td>
+			<td><input type="submit" class="btn btn-blue" value="Register" name=""></td>
+		</tr>
+
+
+	</table>
+	
+</form>
+{% endblock %} }}
