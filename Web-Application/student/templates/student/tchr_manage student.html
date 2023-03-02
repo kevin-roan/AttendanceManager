@@ -1,0 +1,28 @@
+{% extends 'tmp/teacher.html' %}
+{% block base %}
+
+<h1 align="center">Manage Student</h1>
+
+
+<body>
+	<table border="2" align="center" class="table table-bordered" style="font-weight: bolder">
+	<tr>
+		<td>Student Name</td>
+		<td>Address</td>
+		<td>Phone</td>
+		<td>Sem</td>
+	</tr>
+    {% for x in objval %}
+	<tr>
+		<td>{{ x.name }}</td>
+		<td>{{ x.address }}</td>
+		<td>{{ x.phn }}</td>
+		<td>{{ x.sem }}</td>
+		<td><a href="{% url 'sup' idd=x.s_id %}">Update</a></td>
+		<td><a href="{% url 'sdel' idd=x.s_id %}">Delete</a></td>
+	</tr>
+        {% endfor %}
+</table>
+
+
+{% endblock %}
