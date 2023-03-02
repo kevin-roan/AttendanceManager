@@ -1,0 +1,47 @@
+{% extends 'tmp/teacher.html' %}
+{% block base %}
+
+
+	<h1 align="center">Upload Study Materials</h1>
+<form method="post" enctype="multipart/form-data">
+{% csrf_token %}
+	<table align="center">
+
+        <tr>
+			<td>Date</td>
+			<td><input type="date" class="form-control" required="" name="date"></td>
+		</tr>
+       <tr>
+			<td>Select Sem</td>
+			<td> <select name="sem" class="form-control" required="" id="sem">
+			<option value="">Select...</option>
+  			<option value="s1">1</option>
+  			<option value="s2">2</option>
+            <option value="s3">3</option>
+  			<option value="s4">4</option>
+            <option value="s5">5</option>
+  			<option value="s6">6</option>
+  			</select>	</td>
+  		</tr>
+		<tr>
+			<td>Subject</td>
+			<td><input type="text" class="form-control" required="" name="sub"></td>
+		</tr>
+		
+
+		<tr>
+			<td>File</td>
+			<td><input type="file" class="form-control" required="" name="file"></td>
+		</tr>
+
+		
+		<tr>
+			<td></td>
+			<td><input type="submit" class="btn btn-blue" value="Upload" name=""></td>
+		</tr>
+
+
+	</table>
+	
+</form>
+{% endblock %}

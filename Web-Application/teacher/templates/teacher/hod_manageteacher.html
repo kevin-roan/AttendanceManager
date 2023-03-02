@@ -1,0 +1,27 @@
+{% extends 'tmp/hod.html' %}
+{% block base %}
+
+<h1 align="center">Manage Teacher</h1>
+
+<body>
+	<table border="2" align="center" class="table table-bordered" style="font-weight: bolder">
+	<tr>
+		<td>Teacher Name</td>
+		<td>Address</td>
+		<td>Phone</td>
+
+	</tr>
+        {% for x in objval %}
+
+	<tr>
+		<td>{{ x.name }}</td>
+		<td>{{ x.address }}</td>
+		<td>{{ x.phone }}</td>
+
+		<td><a href="{% url 'tup' idd=x.t_id %}">Update</a></td>
+		<td><a href="{% url 't_del' idd=x.t_id %}">Delete</a></td>
+	</tr>
+        {% endfor %}
+    </table>
+
+{% endblock %}

@@ -1,0 +1,61 @@
+{% extends 'tmp/hod.html' %}
+{% block base %}
+    <h1 align="center">Teacher Registration</h1>
+    <form method="post">
+    {% csrf_token %}
+	<table align="center">
+		<tr>
+			<td>Name</td>
+			<td><input type="text" class="form-control" required="" name="tnm"></td>
+		</tr>
+		
+
+		<tr>
+			<td>Address</td>
+			<td><input type="textarea" class="form-control" required="" name="tadr"></td>
+		</tr>
+
+{#		<tr>#}
+{#			<td>Department</td>#}
+{#			<td><select name="dep" class="form-control" required="" id="dep">#}
+{#			<option value="">Select...</option>#}
+{#  			<option value="cs">computer science</option>#}
+{#                <option value="maths">Mathematics</option>#}
+{#  			<option value="english">English</option>#}
+{#                <option value="social">Social Science</option>#}
+{#                <option value="chemistry">Chemistry</option>#}
+{#                <option value="physica">Physics</option>#}
+{#  			</select>#}
+{#  		</td>#}
+{#		</tr>#}
+
+		</tr>
+
+		<tr>
+			<td>Phone Number</td>
+			<td><input type="text" class="form-control" required="" name="tpn"></td>
+		</tr>
+
+		<tr>
+			<td>Email</td>
+			<td><input type="Email" class="form-control" required="" name="tem"></td>
+		</tr>
+
+		<tr>
+			<td>Password</td>
+			<td><input type="Password" class="form-control" required="" name="tpass"></td>
+		</tr>
+
+<tr>
+			<td></td>
+			<td><input type="submit" class="btn btn-blue" value="Register" name=""></td>
+		</tr>
+
+
+	</table>
+	
+</form>
+
+
+
+{% endblock %}
