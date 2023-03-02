@@ -1,0 +1,43 @@
+{% extends 'tmp/hod.html' %}
+{% block base %}
+
+	<h1 align="center">Post Dep Info</h1>
+    <form method="post">
+    {% csrf_token %}
+	<table align="center">
+        <tr>
+			<td>Date</td>
+			<td><input type="date" class="form-control" required="" name="date"></td>
+		</tr>
+
+{#		<tr>#}
+{#			<td>Department</td>#}
+{#			<td><select name="dep" class="form-control" required="" id="dep">#}
+{#			<option value="">Select...</option>#}
+{#  			<option value="cs">computer science</option>#}
+{#            <option value="maths">Mathematics</option>#}
+{#  			<option value="english">English</option>#}
+{#                <option value="social">Social Science</option>#}
+{#                <option value="chemistry">Chemistry</option>#}
+{#             <option value="physics">Physics</option>#}
+{#  			</select>#}
+{#  		</td>#}
+{#		</tr>#}
+		
+
+		<tr>
+			<td>Department Information</td>
+			<td><input type="textarea" class="form-control" required="" name="dinfo"></td>
+		</tr>
+
+		<tr>
+			<td></td>
+			<td><input type="submit" class="btn btn-blue" value="Submit" name=""></td>
+		</tr>
+
+
+	</table>
+	
+</form>
+
+{% endblock %}
