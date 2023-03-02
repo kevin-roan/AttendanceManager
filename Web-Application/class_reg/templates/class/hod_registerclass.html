@@ -1,0 +1,70 @@
+{% extends 'tmp/hod.html' %}
+
+{% block base %}
+
+	<h1 align="center">Register Class</h1>
+    <form method="post">
+    {% csrf_token %}
+	<table align="center">
+{#		<tr>#}
+{#			<td>Department</td>#}
+{#			<td><select name="dept" class="form-control" required="" id="-dept">#}
+{#			<option value="">Select...</option>#}
+{#  			<option value="cs">computer science</option>#}
+{#                <option value="maths">Mathematics</option>#}
+{#  			<option value="english">English</option>#}
+{#                <option value="social">Social Science</option>#}
+{#                <option value="chemistry">Chemistry</option>#}
+{#                <option value="physics">Physics</option>#}
+{#  			</select>#}
+{#  		</td>#}
+{#		</tr>#}
+		
+		<tr>
+			<td>Type</td>
+            <td><select name="type" class="form-control" required="" id="Type">
+			<option value="">Select...</option>
+  			<option value="ug">Under Graduate</option>
+  			<option value="pg">Post Graduate</option>
+            </select>
+        </td>
+		</tr>
+
+		<tr>
+			<td>Course</td>
+            <td><select name="course" class="form-control" required="" id="course">
+			<option value="">Select...</option>
+  			<option value="BCA">BCA</option>
+  			<option value="MCA">MCA</option>
+                <option value="Bsc">Bsc</option>
+  			<option value="Msc">Msc</option>
+            </select>
+		</tr>
+
+        <tr>
+             <td>Semester</td>
+            <td><select name="ss" class="form-control" required="" id="class">
+			<option value="">Select...</option>
+  			<option value="s1">1</option>
+  			<option value="s2">2</option>
+            <option value="s3">3</option>
+  			<option value="s4">4</option>
+            <option value="s5">5</option>
+  			<option value="s6">6</option>
+            </select></td>
+        </tr>
+
+
+		<tr>
+			<td></td>
+			<td><input type="submit" class="btn btn-blue" value="Register" name=""></td>
+		</tr>
+
+
+	</table>
+	
+</form>
+
+
+
+{% endblock %}
